@@ -74,4 +74,33 @@ while i < len(menu):
     item_name = list(menu.keys())[i]
     if menu[item_name]["price"] < 150:
         print("- " + item_name + " ₹" + str(menu[item_name]["price"]))
+
+Output:
+
+===== Starters ===== 
+Paneer Tikka     ₹180.0   [Available]
+Chicken Wings    ₹220.0   [Unavailable]
+Veg Soup         ₹120.0   [Available]
+
+===== Mains ===== 
+Butter Chicken   ₹320.0   [Available]
+Dal Tadka        ₹180.0   [Available]
+Veg Biryani      ₹250.0   [Available]
+Garlic Naan      ₹ 40.0   [Available]
+
+===== Desserts ===== 
+Gulab Jamun      ₹ 90.0   [Available]
+Rasgulla         ₹ 80.0   [Available]
+Ice Cream        ₹110.0   [Unavailable]
+
+=== Menu Statistics ===
+Total items: 10
+Available items: 8
+Most expensive: Butter Chicken ₹320.0
+Items under ₹150:
+- Veg Soup ₹120.0
+- Garlic Naan ₹40.0
+- Gulab Jamun ₹90.0
+- Rasgulla ₹80.0
+- Ice Cream ₹110.0
     i = i + 1
