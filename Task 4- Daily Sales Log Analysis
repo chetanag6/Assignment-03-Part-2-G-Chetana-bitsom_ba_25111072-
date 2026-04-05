@@ -148,3 +148,38 @@ while k < len(all_orders):
     print(str(order_num) + ". [" + date + "] Order #" + str(order_id) + " — ₹" + str(round(total, 2)) + " — Items: " + items_str)
     order_num = order_num + 1
     k = k + 1
+
+Output:
+
+=== Revenue Per Day ===
+2025-01-01: ₹790.0
+2025-01-02: ₹560.0
+2025-01-03: ₹960.0
+2025-01-04: ₹570.0
+
+Best selling day: 2025-01-03 ₹960.0
+
+Most ordered item: Garlic Naan (6 orders)
+
+=== After Adding 2025-01-05 ===
+2025-01-01: ₹790.0
+2025-01-02: ₹560.0
+2025-01-03: ₹960.0
+2025-01-04: ₹570.0
+2025-01-05: ₹750.0
+
+New best selling day: 2025-01-03 ₹960.0
+
+=== All Orders ===
+1. [2025-01-01] Order #1 — ₹220.0 — Items: Paneer Tikka, Garlic Naan
+2. [2025-01-01] Order #2 — ₹210.0 — Items: Gulab Jamun, Veg Soup
+3. [2025-01-01] Order #3 — ₹360.0 — Items: Butter Chicken, Garlic Naan
+4. [2025-01-02] Order #4 — ₹220.0 — Items: Dal Tadka, Garlic Naan
+5. [2025-01-02] Order #5 — ₹340.0 — Items: Veg Biryani, Gulab Jamun
+6. [2025-01-03] Order #6 — ₹260.0 — Items: Paneer Tikka, Rasgulla
+7. [2025-01-03] Order #7 — ₹570.0 — Items: Butter Chicken, Veg Biryani
+8. [2025-01-03] Order #8 — ₹130.0 — Items: Garlic Naan, Gulab Jamun
+9. [2025-01-04] Order #9 — ₹300.0 — Items: Dal Tadka, Garlic Naan, Rasgulla
+10. [2025-01-04] Order #10 — ₹270.0 — Items: Paneer Tikka, Gulab Jamun
+11. [2025-01-05] Order #11 — ₹490.0 — Items: Butter Chicken, Gulab Jamun, Garlic Naan
+12. [2025-01-05] Order #12 — ₹260.0 — Items: Paneer Tikka, Rasgulla
