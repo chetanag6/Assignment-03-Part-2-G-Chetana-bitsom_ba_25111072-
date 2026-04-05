@@ -61,6 +61,29 @@ while i < len(items_list):
     
     if stock <= reorder:
         print("⚠ Reorder Alert: " + item + " — Only " + str(stock) + " unit(s) left (reorder level: " + str(reorder) + ")")
+
+Output:
+
+=== Deep Copy Demo ===
+inventory['Paneer Tikka']['stock'] changed to 100
+inventory: 100
+inventory_backup: 10
+
+Restored inventory to original
+inventory: 10
+
+=== Order Fulfilment ===
+Fulfilled Paneer Tikka x3
+
+=== Reorder Alerts ===
+⚠ Reorder Alert: Paneer Tikka — Only 7 unit(s) left (reorder level: 3)
+⚠ Reorder Alert: Veg Biryani — Only 6 unit(s) left (reorder level: 3)
+⚠ Reorder Alert: Gulab Jamun — Only 5 unit(s) left (reorder level: 2)
+⚠ Reorder Alert: Rasgulla — Only 4 unit(s) left (reorder level: 3)
+
+=== Final Inventories ===
+inventory['Paneer Tikka']['stock']: 7
+inventory_backup['Paneer Tikka']['stock']: 10
     
     i = i + 1
 
