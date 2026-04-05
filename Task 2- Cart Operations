@@ -93,3 +93,33 @@ print("Subtotal:               ₹" + str(round(subtotal, 2)))
 print("GST (5%):               ₹" + str(round(gst, 2)))
 print("Total Payable:          ₹" + str(round(total_payable, 2)))
 print("====================================")
+
+Output:
+
+=== Order Simulation ===
+
+Added Paneer Tikka x2
+Cart: Paneer Tikka x2
+
+Added Gulab Jamun x1
+Cart: Paneer Tikka x2, Gulab Jamun x1
+
+Updated Paneer Tikka quantity to 3
+Cart: Paneer Tikka x3, Gulab Jamun x1
+
+Error: 'Mystery Burger' not found in menu
+Cart: Paneer Tikka x3, Gulab Jamun x1
+
+Error: 'Chicken Wings' is currently unavailable
+Cart: Paneer Tikka x3, Gulab Jamun x1
+
+Removed Gulab Jamun
+Cart: Paneer Tikka x3
+
+========== Order Summary ==========
+Paneer Tikka       x 3   ₹540.0
+------------------------------------
+Subtotal:               ₹540.0
+GST (5%):               ₹27.0
+Total Payable:          ₹567.0
+====================================
