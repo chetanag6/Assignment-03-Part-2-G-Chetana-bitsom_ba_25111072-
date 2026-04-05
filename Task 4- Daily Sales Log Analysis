@@ -1,0 +1,150 @@
+sales_log = {
+    "2025-01-01": [
+        {"order_id": 1,  "items": ["Paneer Tikka", "Garlic Naan"],          "total": 220.0},
+        {"order_id": 2,  "items": ["Gulab Jamun", "Veg Soup"],              "total": 210.0},
+        {"order_id": 3,  "items": ["Butter Chicken", "Garlic Naan"],        "total": 360.0},
+    ],
+    "2025-01-02": [
+        {"order_id": 4,  "items": ["Dal Tadka", "Garlic Naan"],             "total": 220.0},
+        {"order_id": 5,  "items": ["Veg Biryani", "Gulab Jamun"],           "total": 340.0},
+    ],
+    "2025-01-03": [
+        {"order_id": 6,  "items": ["Paneer Tikka", "Rasgulla"],             "total": 260.0},
+        {"order_id": 7,  "items": ["Butter Chicken", "Veg Biryani"],        "total": 570.0},
+        {"order_id": 8,  "items": ["Garlic Naan", "Gulab Jamun"],           "total": 130.0},
+    ],
+    "2025-01-04": [
+        {"order_id": 9,  "items": ["Dal Tadka", "Garlic Naan", "Rasgulla"], "total": 300.0},
+        {"order_id": 10, "items": ["Paneer Tikka", "Gulab Jamun"],          "total": 270.0},
+    ],
+}
+
+# Total revenue per day
+print("=== Revenue Per Day ===")
+daily_revenue = {}
+dates = list(sales_log.keys())
+i = 0
+while i < len(dates):
+    date = dates[i]
+    total = 0.0
+    j = 0
+    orders = sales_log[date]
+    while j < len(orders):
+        total = total + orders[j]["total"]
+        j = j + 1
+    daily_revenue[date] = total
+    print(date + ": ₹" + str(round(total, 2)))
+    i = i + 1
+print()
+
+# Best selling day
+max_revenue = 0
+best_day = ""
+i = 0
+while i < len(dates):
+    date = dates[i]
+    if daily_revenue[date] > max_revenue:
+        max_revenue = daily_revenue[date]
+        best_day = date
+    i = i + 1
+print("Best selling day:", best_day, "₹" + str(round(max_revenue, 2)))
+print()
+
+# Most ordered item
+item_count = {}
+all_items = []
+i = 0
+while i < len(dates):
+    date = dates[i]
+    j = 0
+    orders = sales_log[date]
+    while j < len(orders):
+        k = 0
+        items = orders[j]["items"]
+        while k < len(items):
+            item = items[k]
+            if item not in item_count:
+                item_count[item] = 0
+            item_count[item] = item_count[item] + 1
+            k = k + 1
+        j = j + 1
+    i = i + 1
+
+max_orders = 0
+most_ordered = ""
+for item in item_count:
+    if item_count[item] > max_orders:
+        max_orders = item_count[item]
+        most_ordered = item
+print("Most ordered item:", most_ordered, "(" + str(max_orders) + " orders)")
+print()
+
+# Add new day
+sales_log["2025-01-05"] = [
+    {"order_id": 11, "items": ["Butter Chicken", "Gulab Jamun", "Garlic Naan"], "total": 490.0},
+    {"order_id": 12, "items": ["Paneer Tikka", "Rasgulla"],                     "total": 260.0},
+]
+
+# Reprint updated stats
+print("=== After Adding 2025-01-05 ===")
+dates = list(sales_log.keys())
+daily_revenue = {}
+i = 0
+while i < len(dates):
+    date = dates[i]
+    total = 0.0
+    j = 0
+    orders = sales_log[date]
+    while j < len(orders):
+        total = total + orders[j]["total"]
+        j = j + 1
+    daily_revenue[date] = total
+    print(date + ": ₹" + str(round(total, 2)))
+    i = i + 1
+
+max_revenue = 0
+best_day = ""
+i = 0
+while i < len(dates):
+    date = dates[i]
+    if daily_revenue[date] > max_revenue:
+        max_revenue = daily_revenue[date]
+        best_day = date
+    i = i + 1
+print("New best selling day:", best_day, "₹" + str(round(max_revenue, 2)))
+print()
+
+# Numbered list of all orders using enumerate
+print("=== All Orders ===")
+all_orders = []
+dates = list(sales_log.keys())
+i = 0
+while i < len(dates):
+    date = dates[i]
+    j = 0
+    orders = sales_log[date]
+    while j < len(orders):
+        order = orders[j]
+        all_orders.append((date, order))
+        j = j + 1
+    i = i + 1
+
+order_num = 1
+k = 0
+while k < len(all_orders):
+    date = all_orders[k][0]
+    order = all_orders[k][1]
+    order_id = order["order_id"]
+    total = order["total"]
+    items = order["items"]
+    items_str = ""
+    m = 0
+    while m < len(items):
+        items_str = items_str + items[m]
+        if m < len(items) - 1:
+            items_str = items_str + ", "
+        m = m + 1
+    
+    print(str(order_num) + ". [" + date + "] Order #" + str(order_id) + " — ₹" + str(round(total, 2)) + " — Items: " + items_str)
+    order_num = order_num + 1
+    k = k + 1
